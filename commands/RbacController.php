@@ -46,9 +46,9 @@ class RbacController extends Controller {
         $auth->addChild($admin, $viewAdminPage);
 
         // Назначаем роль admin пользователю с ID 1
-        $auth->assign($admin, 1); 
+        $auth->assign($admin, 2); 
         
         // Назначаем роль editor пользователю с ID 2
-        $auth->assign($clinic, 2);
+        $auth->assign($clinic, 3);
     }
 }

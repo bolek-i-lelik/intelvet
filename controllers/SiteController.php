@@ -18,13 +18,11 @@ class SiteController extends Controller
     {
         return [
             'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'class' => \yii\filters\AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['logout'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['adminClinic']
                     ],
                 ],
             ],
@@ -60,6 +58,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        if(Yii::$app->user->can('admin')){
+            return $this->redirect('/admin/default');
+        }
+        if(Yii::$app->user->can('clinic')){
+            return $this->redirect('/clinic/default');
+        }
+        
         return $this->render('index');
     }
 

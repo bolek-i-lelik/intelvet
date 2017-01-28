@@ -65,6 +65,12 @@ $config = [
             'cost' => 12,
             'admins' => ['admin']
         ],
+        'admin' => [
+            'class' => 'app\modules\admin\Admin',
+        ],
+        'clinic' => [
+            'class' => 'app\modules\clinic\Clinic',
+        ],
     ],
     'params' => $params,
 ];

@@ -55,7 +55,7 @@ AppAsset::register($this);
     ]);*/
     $navItems=[
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Status', 'url' => ['/status/index']],
+        ['label' => 'Status', 'url' => ['/clinic/default']],
         ['label' => 'About', 'url' => ['/site/about']],
         ['label' => 'Contact', 'url' => ['/site/contact']]
       ];

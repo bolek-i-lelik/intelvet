@@ -2,8 +2,11 @@
 
 namespace app\modules\clinic\controllers;
 
+use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use app\modules\clinic\models\Adress;
+use app\modules\clinic\models\Workers;
 
 /**
  * Default controller for the `clinic` module
@@ -42,6 +45,12 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $user_id = Yii::$app->user->id;
+
+        $adresses = Adress::find()->where(['parent'=>$user_id])->all();
+        
+        return $this->render('index',[
+            'adresses' => $adresses,
+        ]);
     }
 }

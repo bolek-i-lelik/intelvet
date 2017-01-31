@@ -1,12 +1,19 @@
 <div class="clinic-default-index">
-    <h1><?= $this->context->action->uniqueId ?></h1>
-    <p>
-        This is the view content for action "<?= $this->context->action->id ?>".
-        The action belongs to the controller "<?= get_class($this->context) ?>"
-        in the "<?= $this->context->module->id ?>" module.
-    </p>
-    <p>
-        You may customize this page by editing the following file:<br>
-        <code><?= __FILE__ ?></code>
-    </p>
+    <div class="panel panel-info">
+        <div class="panel-heading">Общая информация</div>
+        <div class="panel-body">
+            Basic panel example
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">Адреса клиник и филиалов</div>
+        <div class="panel-body">
+            <?php if(empty($adresses)):?>
+                <p>Не внесены параметры клиник и/или филиалов</p>
+            <?php else:?>
+                <?= var_dump($adresses) ?>
+            <?php endif;?>
+        </div>
+    </div>
+    
 </div>

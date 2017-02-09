@@ -57,4 +57,47 @@ class DefaultController extends Controller
             'clinic' => $clinic,
         ]);
     }
+
+    public function actionCreateinfo()
+    {
+
+        if(Yii::$app->request->isGET ){
+            $query = Yii::$app->request->get();
+            
+            $id = $query['id'];
+            $name = $query['name'];
+            $adress = $query['adress'];
+            $phone = $query['phone'];
+            $email = $query['email'];
+            $site = $query['site'];
+
+            $clinic = Clinic::find()->where(['user_id'=>$id])->one();
+            if(isset($clinic)){
+                $clinic->name = $name;
+                $clinic->adress = $adress;
+                $clinic->phone = $phone;
+                $clinic->email = $email;
+                $clinic->site = $site;
+                $clinic->user_id = $id;
+                if($clinic->save()){
+                    echo 'Информация сохранена';
+                }else{
+                    echo 'Информация не сохранена';
+                }    
+            }
+
+            $clinic = new Clinic();
+            $clinic->name = $name;
+            $clinic->adress = $adress;
+            $clinic->phone = $phone;
+            $clinic->email = $email;
+            $clinic->site = $site;
+            $clinic->user_id = $id;
+            if($clinic->save()){
+                echo 'Информация сохранена';
+            }else{
+                echo 'Информация не сохранена';
+            }
+        }
+    }
 }

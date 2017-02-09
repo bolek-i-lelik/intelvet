@@ -1,5 +1,5 @@
 <?php
-
+    $user_id = Yii::$app->user->id;
 ?>
 
 <div class="clinic-default-index">
@@ -17,7 +17,7 @@
                     <?php else:?>
                         <div class="alert alert-danger">
                             Информация о вашей клинике/сети клиник отсутствует. Пожалуйста заполните!&nbsp;&nbsp;&nbsp;&nbsp;    
-                            <button type="button" class="btn btn-success" onclick="addInfoAboutClinic()">Заполнить</button>
+                            <button type="button" class="btn btn-danger" onclick="addInfoAboutClinic(<?= $user_id ?>)">Заполнить</button>
                         </div>
                     <?php endif; ?>
                 </div>

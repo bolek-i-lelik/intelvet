@@ -38,7 +38,7 @@ class Clinic extends \yii\db\ActiveRecord
             [['user_id'], 'integer'],
             ['email', 'email'],
             [['name', 'adress', 'phone', 'avatar', 'email', 'site'], 'string', 'max' => 255],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \dektrium\user\models\User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -64,6 +64,6 @@ class Clinic extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(Users::className(), ['id' => 'user_id']);
+        return $this->hasOne(\dektrium\user\models\User::className(), ['id' => 'user_id']);
     }
 }

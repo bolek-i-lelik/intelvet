@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\bootstrap\Modal;
 
 AppAsset::register($this);
 ?>
@@ -69,7 +70,16 @@ AppAsset::register($this);
         
     </div>
 </footer>
-
+<?php
+// Модальное окно для загрузки содержимого с помощью ajax
+Modal::begin([
+    'header' => '<h4 class="modal-title">Заполните форму</h4>',
+    'id' => 'default-modal',
+    'size' => 'modal-md',
+]);
+?>
+<div id='modal-content'>Загружаю...</div>
+<?php Modal::end(); ?>
 <?php $this->endBody() ?>
 </body>
 </html>

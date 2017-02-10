@@ -74,3 +74,4 @@ function saveInfoAboutClinic(id){
     }
   });
 }
+

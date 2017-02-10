@@ -33,6 +33,21 @@
                 <?= var_dump($adresses) ?>
             <?php endif;?>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="conference">
+                    <button id="btn_getUserMedia" onclick="getUserMedia_click()">getUserMedia</button>
+                    <button id="btn_createOffer" onclick="createOffer_click()">createOffer</button>
+                    <button id="btnHangup" onclick="btnHangupClick()">HangUp</button>
+                    <br />
+                    <video id="localVideo1" autoplay="true"></video>
+                    <br>
+                    <video id="remoteVideo1" autoplay=true></video>
+                    <video id="remoteVideo2" autoplay=true></video>
+                    <audio id="localAudio" autoplay="true"></audio>
+                </div>
+            </div>
+        </div>
     </div>
     
 </div>

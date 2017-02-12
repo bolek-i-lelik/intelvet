@@ -36,7 +36,7 @@ class Clinic extends \yii\db\ActiveRecord
         return [
             [['name', 'adress', 'phone', 'user_id'], 'required'],
             [['user_id'], 'integer'],
-            ['email', 'email'],
+            [['email'], 'email'],
             [['name', 'adress', 'phone', 'avatar', 'email', 'site'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => \dektrium\user\models\User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

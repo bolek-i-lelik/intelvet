@@ -99,5 +99,7 @@ class DefaultController extends Controller
                 echo 'Информация не сохранена';
             }
         }
+
+        return 'ОК';
     }
 }

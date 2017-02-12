@@ -60,9 +60,9 @@ class DefaultController extends Controller
 
     public function actionCreateinfo()
     {
-
-        if(Yii::$app->request->isGET ){
-            $query = Yii::$app->request->get();
+        echo 'fgjdghjdfh';
+        if(Yii::$app->request->isAJAX ){
+            $query = Yii::$app->request->post();
             
             $id = $query['id'];
             $name = $query['name'];

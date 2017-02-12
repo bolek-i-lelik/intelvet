@@ -57,7 +57,7 @@ function saveInfoAboutClinic(id){
   var site = document.getElementById('site').value;
   $.ajax({
     url: '/clinic/default/createinfo',
-    type: 'GET',
+    type: 'POST',
     data: {
       'id': id, 
       'name': name,
@@ -67,7 +67,7 @@ function saveInfoAboutClinic(id){
       'site': site,
     },
     success: function(data){
-      console.log(data);
+      console.log('Привет');
     },
     error: function(){
       console.log('Внутренняя ошибка сервера');
